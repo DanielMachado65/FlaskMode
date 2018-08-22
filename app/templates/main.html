@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+<!-- sempre que insere informação dentro de um bloco ele irá substituir, se já existir informação -->
+{% block title %} {{ super() }} > Main {% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Olá mundo</h2>
+    {% if user %}
+    <p> Bem-vindo: {{user}} </p>
+    {% else %}
+    <p> Bem vindo novamente</p>
+    {% endif %}
+</div>
+{% endblock %}
