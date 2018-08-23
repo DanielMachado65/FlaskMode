@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if title %}
+      <title> Flask Blog - {{ title }} </title>
+    {% else %}
+      <title>Flask Blog</title>
+    {% endif %}
+  </head>
+  <body>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+            <div class="container">
+                <a class="nav-brand mr-4" href="">Flask Blog</a>
+            </div>
+        </nav>
+    </header>
+  </body>
+</html>
