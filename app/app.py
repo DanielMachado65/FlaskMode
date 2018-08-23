@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
+from flask_login import LoginManager
 
 app = Flask(__name__)
 
@@ -18,9 +19,13 @@ migrate = Migrate(app, db)
 manager = Manager(app)
 manager.add_command('db', MigrateCommand)
 
+# Gerenciador de Login
+lm = LoginManager(app)
+lm.init_app(app)
+
+# chamando os modelos
+from app.models import tables
+
 # executando rotas>
-try:
-    from app.controllers import default
-except Exception as error:
-    print(error)
+from app.controllers import default
 
